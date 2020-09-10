@@ -1,7 +1,8 @@
 package msenibaldi;
-/* Author: Matt Senibaldi
- * 9/6/2020
- * Class1
+/* Name: Timer Program
+ * Author: Matt Senibaldi
+ * Date: 9/6/2020
+ * Synopsis: This program will run a basic timer.
  * This program is a basic timer
  */
 import java.util.Timer;
