@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+package msenibaldi;
+
+/** Name: Random Number Generator
+ * @author Matt Senibaldi
+ * Date: 9/13/2020
+ * Synopsis: This program will generate 1 million random integers
+ */
+import java.util.Random; // Importing Java's built in Random utility
+import java.util.Scanner; //Importing scanner
+public class RandomNum {
+
+	
+	public static void main(String[] args) {
+		
+		Scanner scanNum = new Scanner(System.in);
+		
+		Random rd = new Random(); //Creating random gen object
+		
+		int [] numbers = new int[1000000]; // Generating a new array with 1 million elements
+		for (int i = 0; i < numbers.length; i++) {
+			numbers[i] = rd.nextInt(); // Storing my random integers in the array
+			
+			
+		}
+		for ( int i = 1; i <=numbers[i]; i++) {
+			if(numbers[i] % i == 0) {
+				System.out.format(" %d%n ", numbers[i]);
+			}
+			System.out.println("Type 1 if you would like to create a report");
+			if (scanNum.nextInt() == 1) {
+				System.out.println(numbers[i]);
+				
+			}
+			else {
+				System.exit(0);
+				
+			}
+			
+		}
+		
+	}
+	
+}
