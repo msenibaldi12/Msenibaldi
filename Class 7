@@ -1,0 +1,109 @@
+/**
+ * Author: Matt Senibaldi
+ * This program will serial through a linked list and print the largest number
+ * Class 7
+ * ListSerial
+ * 10/16/2020
+ * 
+ */
+import java.util.*;
+import java.util.function.Supplier;
+import java.util.LinkedList;
+
+
+
+public class Class7 {
+
+	
+	 class Node {
+		int list1;
+		Node next;
+		// Rep. a node of the linked list
+		public Node(int list1) {
+			this.list1 = list1;
+			this.next = null;
+		}
+	}
+	
+	public Node head = null; // remove Static if issues occur
+	public Node tail = null; // Defining the head and tail of the linked list
+	
+	public void addNode(int list1) {
+		// Creating a new node
+		Node newNode = new Node(list1);
+		
+		// Now I have to make sure the linked list is not empty
+		
+		if(head == null) {
+			head = newNode;
+			tail = newNode; // If either are empty create a new node
+		}
+		else {
+			tail.next = newNode; // Newnode is added so the tail will point to newNode
+			tail = newNode; //creating the new tail of the list
+		}
+	}
+		
+	public void maxNode() { // Remove static if issues occur
+		Node current = head; // Defining my variables
+		int max; 
+		
+		if(head==null) {
+			System.out.println("List is empty");
+			
+		}
+		else {
+			max = head.list1; // Setting the max with the data contained in the node
+			
+			while(current!=null) {
+				if(max < current.list1) { // If node's data is larger than max
+					max = current.list1; // Replace the value of max with current value
+					
+				}
+				current = current.next;
+			}
+			System.out.println("Max Value Node in the list: " + max);
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		//List<Integer> list1 = new LinkedList<Integer>();
+		// Initializing my Linked Integer List
+		//List1<string> sList = new List1();
+		Class7 sList = new Class7();
+		
+		sList.addNode(1);
+		sList.addNode(2);
+		sList.addNode(3);
+		sList.addNode(4);
+		sList.addNode(5);
+		sList.addNode(6);
+		sList.addNode(7);
+		sList.addNode(8);
+		sList.addNode(9);
+		sList.addNode(10);
+		
+		sList.maxNode();
+		
+		//list1.add(1);
+		//list1.add(2);
+		//list1.add(3);
+		//list1.add(4);
+		//list1.add(5);
+		//list1.add(6);
+		//list1.add(7);
+		//list1.add(8);
+		//list1.add(9);
+		//list1.add(10);
+		
+		//System.out.println("LinkedList : " + list1.toString());//
+		
+	
+		//list1.maxNode();
+		
+		
+	
+	}
+}
